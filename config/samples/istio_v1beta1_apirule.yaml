@@ -10,7 +10,7 @@ spec:
   host: istio.testHost.com
   gateway: kyma-system/kyma-gateway
   rules:
-    - path: /.*
+    - path: /orders
       service:
         name: orders-service
         port: 80
