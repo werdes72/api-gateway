@@ -37,7 +37,6 @@ jobs:
     name: Integration tests
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
-    needs: [wait-for-image-build]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,7 +44,7 @@ jobs:
           fetch-depth: 0
       - uses: ./.github/actions/integration-tests
         with:
-          manager_image: "europe-docker.pkg.dev/kyma-project/dev/api-gateway-manager:PR-${{github.event.number}}"
+          manager_image: "europe-docker.pkg.dev/kyma-project/dev/api-gateway-manager:002d1720f28e6f98b403dba2547d57081802decb"
 
   k8s-compatibility-check:
     name: Kubernetes version compatibility test
