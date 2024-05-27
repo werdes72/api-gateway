@@ -227,6 +227,7 @@ func main() {
 	}
 
 	setupLog.Info("Starting manager")
+
 	setupLog.Info("Module version", "version", version.GetModuleVersion())
 
 	if err := mgr.Start(ctrl.SetupSignalHandler()); err != nil {
